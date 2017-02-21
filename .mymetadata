@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-module
   type="WEB"
-  name="testMVC1"
+  name="personalManageSystem"
   id="myeclipse.1486609446826"
-  context-root="/testMVC1"
+  context-root="/personalManageSystem"
   j2ee-spec="5.0"
-  archive="testMVC1.war">
+  archive="personalManageSystem.war">
   <attributes>
     <attribute name="webrootdir" value="WebRoot" />
   </attributes>
