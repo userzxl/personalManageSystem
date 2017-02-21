@@ -1,0 +1,6 @@
+@CHARSET "UTF-8";
+body{background: url("../img/loginBg.jpg");}
+#loginBar{width:450px;height:auto;margin:0 auto;border:1px solid#eee;text-align:center}
+#loginBar input{margin:30px auto 0;width:80%;}
+.login_bar_title{background: url("../img/blackBg.png") repeat;color:#fff;padding:15px 0;font-size:26px;padding-left:20px;text-align: left}
+#loginBar .login_submit{display:block;width:20%;padding:5px 0;margin-bottom:40px;font-size:16px;font-family:'微软雅黑';font-weight:600;letter-spacing: 5px;background:url("../img/blackBg.png") repeat;color:#fff}
