@@ -29,6 +29,7 @@
   				</c:if>
   			</c:forEach>
   		</ul>
+  		<a href="logout" id="logout">退出</a>
   	</div>
   	
      <br>
