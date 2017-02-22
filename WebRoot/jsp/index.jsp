@@ -11,10 +11,8 @@
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<link rel="stylesheet" type="text/css" href="css/common.css" />
-	<link rel="stylesheet" type="text/css" href="css/headerFooter.css" />
-	
+	<meta http-equiv="description" content="This is my page">	
+	<%@ include file="include/common.jsp" %>
 
 	
   </head>
@@ -25,7 +23,7 @@
   		<ul id="menu" class="menu">
   			<c:forEach items="${menu}" var="thisMenu">
   				<c:if test="${thisMenu.menuParent == '0'}" var="hehe">
-  					<li><a href="<%=basePath%>${thisMenu.menuAddr}">${thisMenu.menuName}</a></li>
+  					<li><a menuNum="${thisMenu.menuNum}" href="<%=basePath%>${thisMenu.menuAddr}">${thisMenu.menuName}</a></li>
   				</c:if>
   			</c:forEach>
   		</ul>
