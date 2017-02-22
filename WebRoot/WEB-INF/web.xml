@@ -60,5 +60,21 @@
 			org.springframework.web.util.Log4jConfigListener 
 	   </listener-class> 
 	</listener> 
+	<!-- 错误页面配置 -->
+	<!-- <error-page>
+
+	    <exception-type>完整的异常类名</exception-type>
+	
+	    <location>以”/”开头的异常处理页面路径</location>
+	
+	 </error-page>
+	
+	 <error-page>
+	
+	    <error-code>HTTP响应状态码</error-code>
+	
+	    <location>以”/”开头的异常处理页面路径</location>
+	
+	 </error-page>  -->
   
 </web-app>
