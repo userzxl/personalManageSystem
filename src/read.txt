@@ -1,0 +1,27 @@
+#自动生成代码
+D:\myeclipse10\workspace\testMVC1\WebRoot\WEB-INF\lib
+java -jar mybatis-generator-core-1.3.2.jar -configfile generatorConfig.xml -overwrite
+
+#The method xxx of type xxx  must override a superclass method
+解决方法：
+一、                                                                     
+因为你的Compiler 是jdk1.5，只要把它改为 1.6
+方法： 
+1. window ->preferences... -> Java -> Compiler
+2. Compiler compliance level : 1.6
+二、 把项目的JRE变成6.0的
+项目右键->build path->configure build path->Java Compiler(左边那排中) ->在右边的Compiler compliance level 修改版本为1.6  
+
+那么，想要创建.htaccess文件该怎么办呢？方法说穿了很简单：
+
+1. 打开Windows内建的记事本；
+
+2. 选取另存新文件“文件->另存为”；
+
+3. 在另存为的“保存类型”下拉选单中选取“所有文件”类型，可以选择utf-8，也可以是ansi
+
+4. 这时就可在“文件名”中输入.htaccess；
+
+5. 选取要另存的路径再按下保存，一个.htaccess 文件就新增完成。
+
+#修改404
