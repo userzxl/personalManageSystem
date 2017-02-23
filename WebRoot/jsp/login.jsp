@@ -31,11 +31,11 @@
   
   <body>
   	<div id="loginBar">
-  		<p class="login_bar_title">个人信息管理系统登录</p>
+  		<p class="login-bar-title">个人信息管理系统登录</p>
   		<form action="login/user" method="post">
-  			<input value="admin" class="input_300" name="userName" type="text" />
-  			<input value="123456" class="input_300" name="password" type="password" />
-  			<input class="login_submit" value="登录" type="submit"/>
+  			<input value="admin" class="input-300" name="userName" type="text" />
+  			<input value="123456" class="input-300" name="password" type="password" />
+  			<input class="login-submit" value="登录" type="submit"/>
   		</form>
   	</div>
      

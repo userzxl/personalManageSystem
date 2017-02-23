@@ -11,8 +11,18 @@ public class Menu {
     private String menuParent;
     
     private String menuNum;
+    
+    private String menuChild;
 
-    public String getMenuNum() {
+    public String getMenuChild() {
+		return menuChild;
+	}
+
+	public void setMenuChild(String menuChild) {
+		this.menuChild = menuChild;
+	}
+
+	public String getMenuNum() {
 		return menuNum;
 	}
 

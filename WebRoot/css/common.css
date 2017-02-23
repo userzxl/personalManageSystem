@@ -1,5 +1,8 @@
 *{margin:0;padding:0}
-body{background: #EDE2E2}
+
 #timeout{color:blue}
 
-.input_300{width:300px;height:40px;font-size:16px;padding-left:10px;letter-spacing: 1px}
+.input-300{width:300px;height:40px;font-size:16px;padding-left:10px;letter-spacing: 1px}
+
+.hover-bg-red:hover{background-color: #F75E30}
+.color-white{color:#fff}

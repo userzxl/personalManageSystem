@@ -7,9 +7,10 @@
     <result column="menu_parent" property="menuParent" jdbcType="INTEGER" />
     <result column="menu_num" property="menuNum" jdbcType="INTEGER" />
     <result column="menu_addr" property="menuAddr" jdbcType="VARCHAR" />
+    <result column="menu_child" property="menuChild" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    menu_id, menu_name,menu_parent,menu_addr,menu_num
+    menu_id, menu_name,menu_parent,menu_addr,menu_num,menu_child
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 

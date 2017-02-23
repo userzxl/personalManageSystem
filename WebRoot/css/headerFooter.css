@@ -1,4 +1,4 @@
-@CHARSET "UTF-8";
+/* @CHARSET "UTF-8";
 #webHeader{background:url("../img/blackBg.png") repeat;padding:20px;position:relative;height:30px}
 .pro_title{color:#000;font-size:18px;display:inline-block}
 .pro_title img{width:40px}
@@ -9,4 +9,8 @@
 #menu li a:hover{color:#5AB0D6}
 
 #logout{text-align:center;line-height:70px;text-decoration:none;font-size: 16px;background-color: #4C4848;height:100%;position:absolute;top:0;border:0;right:0;width:100px;color:#fff;letter-spacing: 2px}
-#logout:hover{background-color: #E46969}
+#logout:hover{background-color: #E46969} */
+
+/* 修改bootstrap,防止菜单溢出 */
+.navbar-right{margin-right:0}
+.navbar-inverse .color-white{color:#fff}
