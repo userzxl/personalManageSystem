@@ -21,7 +21,7 @@
 	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="container-fluid"></div>
 		<img class="navbar-left navbar-logo" src="${basepath}/img/logo.png" />
-		<div class="navbar-header "><a class="navbar-brand color-white">个人信息管理系统</a></div>
+		<div class="navbar-header "><a href="#" class="navbar-brand color-white">个人信息管理系统</a></div>
 		<div>
 			<%-- <p class="pro_title"><img alt="" src="<%=basePath%>img/qm.png"><span>个人信息管理管理系统</span></p> --%>
 			<ul id="menu" class="nav navbar-nav">
@@ -53,12 +53,10 @@
 			</ul>
 		</div>		  	
 	</nav>
-	<div class="container">
-		<div class="row">
-		   <div class="col-*-*"></div>
-		   <div class="col-*-*"></div>      
-		</div>
-		<div class="row"></div>
-	</div>
+	<div class="container-fluid" id="pcont" style="height: 100%;">
+
+              <iframe style="width: 100%;height: 101%;outline: none;border: 0;" id="contentFrame" name="contentFrame" src="basicOperation/menu_manage.html"></iframe>
+
+          </div>
   </body>
 </html>

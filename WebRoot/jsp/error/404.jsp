@@ -30,7 +30,12 @@
  			document.getElementById("timeout").innerHTML=sometime; 	
  			window.setTimeout("redirect()",1000);	
     	}else{
-    		window.location.href ="<%=path%>/index";
+    		if(window.parent==window){
+    			window.parent.location.href ="<%=path%>/index";
+    		}else{
+    			window.location.href ="<%=path%>/defaultPage";
+    		}
+    		
     	}
     	
     }
