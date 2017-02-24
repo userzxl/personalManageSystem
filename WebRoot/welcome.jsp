@@ -12,12 +12,25 @@
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
+	<link rel="stylesheet" type="text/css" href="css/welcome.css" />
 	
   </head>
   
   <body>
-  	<div>
-  		<h1>欢迎您<a href=${path}index>登录</a></h1>
+  	<div class="container">
+  		<div class="nav">
+  			<img class="navbar-left navbar-logo" src="img/logo.png" />
+			<div class="navbar-header "><a class="navbar-brand color-white">PersonalManageSystem</a></div>
+			    <%  if(session.getAttribute("userName") == null) {  %>  
+		            <a class="login" href=${path}login>登录</a>
+ 				<% }else{  %> 
+ 					<a class="login" href=${path}index>进入系统</a> 
+				<% } %>  
+  		</div>
+  		<div class="article">
+  			<h1 class="welcome-title">PersonalManageSystem </h1>
+  			<p class="welcome-words">Stray birds of summer come to my window to sing and fly away.And yellow leaves of autumn, which no songs,flutter and fall there with a sign. </p>
+  		</div>
   	</div>
   	
      <br>
