@@ -55,10 +55,10 @@
 	</nav>
 	<div class="container">
 		<div class="row">
-		   <div class="col-*-*">2123123</div>
-		   <div class="col-*-*">123123</div>      
+		   <div class="col-*-*"></div>
+		   <div class="col-*-*"></div>      
 		</div>
-		<div class="row">...</div>
+		<div class="row"></div>
 	</div>
   </body>
 </html>

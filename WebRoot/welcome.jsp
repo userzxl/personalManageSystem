@@ -24,7 +24,8 @@
 			    <%  if(session.getAttribute("userName") == null) {  %>  
 		            <a class="login" href=${path}login>登录</a>
  				<% }else{  %> 
- 					<a class="login" href=${path}index>进入系统</a> 
+ 				<% String userName = session.getAttribute("userName").toString();  %>
+ 					<a class="login" href=${path}index>进入系统</a><span class="login"><%=userName%>&nbsp;&nbsp;&nbsp;</span> 
 				<% } %>  
   		</div>
   		<div class="article">

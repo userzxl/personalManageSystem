@@ -23,12 +23,12 @@ public class LogoutController {
 	public ModelAndView logout(HttpServletRequest request,ModelAndView mv,HttpServletResponse response){
 		request.getSession().invalidate();
 		try {
-			response.sendRedirect(request.getContextPath() +"/welcome");
+			response.sendRedirect(request.getContextPath() +"/index");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return mv;
+		return null;
 		
 	}
 

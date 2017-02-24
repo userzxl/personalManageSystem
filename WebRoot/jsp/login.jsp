@@ -19,8 +19,13 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			var marginTop=$(document).height()-$("#loginBar").height();
-			console.log($(document).height()+":"+$("#loginBar").height());
+
 			$("#loginBar").css("margin-top",marginTop/2+"px");
+			$(window).resize(function() {
+			  marginTop=$(document).height()-$("#loginBar").height();
+
+				$("#loginBar").css("margin-top",marginTop/2+"px");
+			});
 		})
 	</script>
 	<!--
