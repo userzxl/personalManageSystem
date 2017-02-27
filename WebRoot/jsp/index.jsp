@@ -13,7 +13,7 @@
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">	
 	<%@ include file="include/common.jsp" %>
-
+	
 	
   </head>
   
@@ -38,12 +38,12 @@
 							<ul class="dropdown-menu">
 								<c:forEach items="${thisMenu.children}" var="childMenu">
 								
-								<li><a menuNum="${childMenu.menuNum}" href="<%=basePath%>${childMenu.menuAddr}">${childMenu.menuName}</a></li>
+								<li><a  class="menuAddr" menuNum="${childMenu.menuNum}" menuAddr="<%=basePath%>${childMenu.menuAddr}">${childMenu.menuName}</a></li>
 								</c:forEach>
 							</ul>
 						</li>
 					</c:if>
-					<c:if test="${thisMenu.parent.menuChild != '1'}"><li class="${activeMenu}"><a menuNum="${thisMenu.parent.menuNum}" >${thisMenu.parent.menuName}</a></li></c:if>  				
+					<c:if test="${thisMenu.parent.menuChild != '1'}"><li class="${activeMenu}"><a class="menuAddr" menuAddr="<%=basePath%>${thisMenu.parent.menuAddr}" menuNum="${thisMenu.parent.menuNum}" >${thisMenu.parent.menuName}</a></li></c:if>  				
 				</c:forEach>
 				
 			</ul>
@@ -53,10 +53,18 @@
 			</ul>
 		</div>		  	
 	</nav>
-	<div class="container-fluid" id="pcont" style="height: 100%;">
+	<div class="container-fluid frame-wrapper" id="pcont" style="height: 100%;">
 
-              <iframe style="width: 100%;height: 101%;outline: none;border: 0;" id="contentFrame" name="contentFrame" src="basicOperation/menu_manage.html"></iframe>
+              <iframe style="width: 100%;height: 101%;outline: none;border: 0;" id="contentFrame" name="contentFrame" src="frameIndex"></iframe>
 
           </div>
   </body>
+  <script type="text/javascript">
+		$(document).ready(function(){		
+			$("a.menuAddr").click(function(){			
+				var attrMenu=$(this).attr("menuAddr");
+				$("#contentFrame").attr("src",attrMenu);
+			})
+		})
+	</script>
 </html>

@@ -1,8 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
+<%@ include file="../include/include.jsp" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -16,6 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
+	<%@ include file="../include/common.jsp" %>
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
@@ -23,6 +21,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <br>
+    <nav class=" bg-blue frame-navbar" role="navigation">
+		<div class="container-fluid"></div>
+		<div class="navbar-header "><label class="navbar-brand color-white">所在位置:</label></div>
+		
+	</nav>
   </body>
 </html>

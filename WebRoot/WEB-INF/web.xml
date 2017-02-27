@@ -3,7 +3,9 @@
 	xmlns="http://java.sun.com/xml/ns/javaee" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
-	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
+        http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket.xsd">
   <display-name>Spring MVC</display-name>	
   <!-- 欢迎页面 -->
   <welcome-file-list>
@@ -61,19 +63,19 @@
 	   </listener-class> 
 	</listener> 
 	<!-- 错误页面配置 -->
-	<!-- <error-page>
+	<error-page>
 
-	    <exception-type>完整的异常类名</exception-type>
+	    <exception-type>org.springframework.web.util.NestedServletException</exception-type>
 	
-	    <location>以”/”开头的异常处理页面路径</location>
+	    <location>/jsp/error/database.jsp</location>
 	
 	 </error-page>
 	
-	 <error-page>
+	 <!-- <error-page>
 	
-	    <error-code>HTTP响应状态码</error-code>
+	    <error-code></error-code>
 	
-	    <location>以”/”开头的异常处理页面路径</location>
+	    <location></location>
 	
 	 </error-page>  -->
   
