@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.unit.zxl.utils;
+package com.unit.zxl.websocket;
 
 
 import org.springframework.web.socket.TextMessage;

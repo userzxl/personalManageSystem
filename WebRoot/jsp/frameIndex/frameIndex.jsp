@@ -24,6 +24,7 @@
     <nav class=" bg-blue frame-navbar" role="navigation">
 		<div class="container-fluid"></div>
 		<div class="navbar-header "><label class="navbar-brand color-white">所在位置:</label></div>
+		<a href="websocket"></a>
 		
 	</nav>
   </body>
