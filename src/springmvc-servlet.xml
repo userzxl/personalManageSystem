@@ -59,10 +59,6 @@
 			 <mvc:exclude-mapping path="/*.js"/>
 			<bean class="com.unit.zxl.interceptor.LoginInterceptor" />
 		</mvc:interceptor>
-		<!-- <mvc:interceptor>
-			<mvc:mapping path="/**/*.html*" />
-			<bean class="com.cykj.interceptor.RightsHandlerInterceptor" />
-		</mvc:interceptor> -->
 	</mvc:interceptors>
 	<!-- 
 	 <bean id="websocket" class="com.unit.zxl.websocket.WebsocketEndPoint" ></bean>
@@ -73,13 +69,6 @@
     	</websocket:hanshake-interceptors>
     </websocket:handlers> -->
 	
-	 <bean id="websocket" class="com.unit.zxl.websocket.WebsocketEndPoint" ></bean>
-    <websocket:handlers>
-    	<websocket:mapping path="/websocket" handler="websocket"/>
-    	<websocket:hanshake-interceptors>
-    		<bean class="com.unit.zxl.interceptor.HandShakeInterceptor"/>
-    	</websocket:hanshake-interceptors>
-    </websocket:handlers>
 	<!-- 对模型视图名称的解析，即在模型视图名称添加前后缀 -->
 	<bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		  <property name="prefix" value="/jsp/" />
