@@ -17,6 +17,35 @@
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<script type="text/javascript">
+		$(function(){
+			(function longPolling(){
+				$.ajax({
+					url:"ajax",
+					data:{"timed": new Date().getTime()},
+					type:"post",
+					dataType:"text",
+					timeout:15000,
+					success:function(data,textStatus){
+						$("#ajaxShow").append("data:"+data+";textStatus:"+textStatus+"<br/>");
+						if(textStatus=="success"){
+							longPolling();
+						}
+						
+					},
+					error:function(textStatus,errorThrown){
+						$("#ajaxShow").append("errorThrown:"+errorThrown+";textStatus:"+textStatus+"<br/>");
+						if(textStatus=="timeout"){
+							longPolling();
+						}else{
+							longPolling();
+						}
+					}
+						
+				});
+			})();
+		});
+	</script>
 
   </head>
   
@@ -24,7 +53,7 @@
     <nav class=" bg-blue frame-navbar" role="navigation">
 		<div class="container-fluid"></div>
 		<div class="navbar-header "><label class="navbar-brand color-white">所在位置:</label></div>
-		<a href="websocket"></a>
+		<div id="ajaxShow"></div>
 		
 	</nav>
   </body>

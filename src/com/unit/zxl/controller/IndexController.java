@@ -35,7 +35,6 @@ public class IndexController{
 				map2.put("parent", menu1);
 				
 				if(menu1.getMenuChild() != null && menu1.getMenuChild().equals("1")){
-					System.out.println(menu1.getMenuChild());
 					List<Menu> menuList = new ArrayList<Menu>();
 					for (Menu menu2 : menu) {
 						
