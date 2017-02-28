@@ -2,7 +2,6 @@
  * 
  */
 package com.unit.zxl.interceptor;
-
 import java.util.Map;
 
 import org.springframework.http.server.ServerHttpRequest;
@@ -21,6 +20,8 @@ public class HandShakeInterceptor extends HttpSessionHandshakeInterceptor {
 			ServerHttpResponse response, WebSocketHandler wsHandler,
 			Exception ex) {
 		// TODO Auto-generated method stub
+		System.out.println("After HandShake");
+		
 		super.afterHandshake(request, response, wsHandler, ex);
 	}
 
@@ -29,6 +30,7 @@ public class HandShakeInterceptor extends HttpSessionHandshakeInterceptor {
 			ServerHttpResponse response, WebSocketHandler wHandler,
 			Map<String, Object> attributes) throws Exception {
 		// TODO Auto-generated method stub
+		System.out.println("Before HandShake");
 		return super.beforeHandshake(request, response, wHandler, attributes);
 	}
 	

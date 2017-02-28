@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="2.5" 
+<web-app version="3.0" 
 	xmlns="http://java.sun.com/xml/ns/javaee" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:websocket="http://www.springframework.org/schema/websocket"  
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
-	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd
+	http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd
 	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
-        http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket.xsd">
+        http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.1.xsd">
   <display-name>Spring MVC</display-name>	
   <!-- 欢迎页面 -->
   <welcome-file-list>
     <welcome-file>welcome.jsp</welcome-file>
   </welcome-file-list>
+  <async-supported>true</async-supported>
   <!-- 控制器及映射设置 -->
   <servlet>
 	<servlet-name>springmvc</servlet-name>
