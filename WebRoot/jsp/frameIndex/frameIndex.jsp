@@ -53,11 +53,7 @@
     <nav class=" bg-blue frame-navbar" role="navigation">
 		<div class="container-fluid"></div>
 		<div class="navbar-header "><label class="navbar-brand color-white">所在位置:</label></div>
-<<<<<<< HEAD
 		<div id="ajaxShow"></div>
-=======
-		<a href="websocket"></a>
->>>>>>> branch 'master' of https://github.com/userzxl/personalManageSystem.git
 		
 	</nav>
   </body>
