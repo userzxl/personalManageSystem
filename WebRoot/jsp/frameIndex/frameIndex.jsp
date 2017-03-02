@@ -50,11 +50,15 @@
   </head>
   
   <body>
-    <nav class=" bg-blue frame-navbar" role="navigation">
+    <nav class="frame-navbar" role="navigation">
 		<div class="container-fluid"></div>
-		<div class="navbar-header "><label class="navbar-brand color-white">所在位置:</label></div>
-		<div id="ajaxShow"></div>
+		<div class="navbar-header "><label class="navbar-brand color-white">所在位置:
+		<c:if test="${menuName !=null}">${menuName}</c:if>
+		</label></div>
+		<div class="clean-both"></div>
 		
 	</nav>
+	<div id="ajaxShow"></div>
+	
   </body>
 </html>

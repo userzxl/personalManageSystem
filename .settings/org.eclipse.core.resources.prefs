@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//WebRoot/jsp/include/commonCss.jsp=UTF-8
+encoding//WebRoot/jsp/include/commonJs.jsp=UTF-8
 encoding//src/jdbc.properties=UTF-8
 encoding//src/log4j.properties=UTF-8
 encoding/<project>=UTF-8

@@ -12,6 +12,9 @@
 #logout:hover{background-color: #E46969} */
 
 /* 修改bootstrap,防止菜单溢出 */
+html,body{background:url("../img/indexBg.jpg");height:100%;background-position:center;}
+.navbar-inverse{background:url("../img/blackBg.png") repeat;}
 .navbar-right{margin-right:0}
 .navbar-inverse .color-white{color:#fff}
 .navbar-logo{width:50px;margin-left:10px}
+.footer{position:absolute;bottom:0;padding:10px 0;letter-spacing:1px;text-align: center;background:url("../img/blackBg.png") repeat;color:#fff;width:100%}

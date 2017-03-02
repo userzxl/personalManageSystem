@@ -17,6 +17,7 @@ public class FrameIndexController {
 	@RequestMapping
 	public ModelAndView toFrameIndex(ModelAndView mv){
 		mv.setViewName("frameIndex/frameIndex");
+		mv.addObject("menuName", "首页");
 		return mv;
 	}
 }

@@ -22,7 +22,8 @@
     <mvc:resources location="/img/" mapping="/img/**"/> 
 	<mvc:resources location="/css/" mapping="/css/**"/> 
 	<mvc:resources location="/js/" mapping="/js/**"/>
-	
+	<mvc:resources location="/fonts/" mapping="/fonts/**"/>
+	<mvc:resources location="/font-awesome/" mapping="/font-awesome/**"/>
   
 	<!-- 默认扫描路径的包路径 -->
 	<context:component-scan base-package="com.unit.zxl.controller" />
@@ -54,6 +55,8 @@
 			 <mvc:exclude-mapping path="/img/**"/>
 			 <mvc:exclude-mapping path="/css/**"/>
 			 <mvc:exclude-mapping path="/js/**"/>
+			 <mvc:exclude-mapping path="/fonts/**"/>
+			 <mvc:exclude-mapping path="/font-awesome/**"/>
 			 <mvc:exclude-mapping path="/*.img"/>
 			 <mvc:exclude-mapping path="/*.css"/>
 			 <mvc:exclude-mapping path="/*.js"/>

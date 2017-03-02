@@ -12,3 +12,5 @@
 /* 固定模块的样式 */
 .frame-wrapper{margin-top:-10px}
 .frame-navbar{}
+
+.clean-both{clear: both;width:100%}
