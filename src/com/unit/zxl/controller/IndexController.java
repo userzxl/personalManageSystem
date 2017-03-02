@@ -33,22 +33,30 @@ public class IndexController{
 			if(menu1.getMenuParent().equals("0")){								
 				Map map2 = new HashMap<>();	
 				map2.put("parent", menu1);
-				
 				if(menu1.getMenuChild() != null && menu1.getMenuChild().equals("1")){
-					List<Menu> menuList = new ArrayList<Menu>();
-					for (Menu menu2 : menu) {
-						
-						if(menu2.getMenuParent().equals(menu1.getMenuNum()) ){
-							menuList.add(menu2);
-						}
-					}
-					map2.put("children", menuList);
+					getMenuChild(menu, menu1, map2);
 				}
 				map.add(map2);
+				
 			}						
 		}
 		model.addAttribute("menu", map);
 		return "index";
+		
+	}
+	public void getMenuChild(List<Menu> menu,Menu menu1,Map map2){
+			List<Menu> menuList = new ArrayList<Menu>();
+			for (Menu menu2 : menu) {
+				
+				if(menu2.getMenuParent().equals(menu1.getMenuNum()) ){
+					menuList.add(menu2);
+					if(menu2.getMenuChild() != null && menu2.getMenuChild().equals("1")){
+						getMenuChild(menu, menu2, map2);
+					}
+				}
+			}
+			map2.put("children", menuList);
+
 		
 	}
 }

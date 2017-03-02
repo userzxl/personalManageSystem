@@ -10,14 +10,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Home</title>
 		<%@ include file="include/commonCss.jsp" %>
-		
+		<style type="text/css">
+			.container-fluid{padding-left:0px !important;padding-right:0px !important}
+		</style>
 		
 
 	</head>
 
 	<body>
 		<div id="wrapper">
-			<nav class="navbar navbar-default top-navbar" role="navigation">
+			<nav id="headerNav" class="navbar navbar-default top-navbar" role="navigation">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
 	                    <span class="sr-only">Toggle navigation</span>
@@ -158,12 +160,12 @@
 						<c:forEach items="${menu}" var="thisMenu" varStatus="status">
 							<c:if test="${status.index == 0 }">
 								<c:set var="activeMenu" value="active-menu"></c:set>
-							
+								<c:set var="indexMenu" value="${thisMenu}"></c:set>		
 							</c:if>
 							<c:if test="${status.index != 0 }">
 								<c:set var="activeMenu" value=""></c:set>
 							</c:if>
-							<c:if test="${thisMenu.parent.menuChild == '1'}" >
+							<c:if test="${thisMenu.parent.menuChild == '1'}" >								
 								<li class="dropdown ${activeMenu}"><a class="dropdown-toggle" data-toggle="dropdown" menuNum="${thisMenu.parent.menuNum}">${thisMenu.parent.menuName}<span class="fa arrow"></span></a>
 									<ul class="nav nav-second-level">
 										<c:forEach items="${thisMenu.children}" var="childMenu">
@@ -189,9 +191,9 @@
 					<div class="row">
 						<div class="col-md-12">
 							<h1 class="page-header">
-                            Dashboard <small>Summary of your App</small>
+                             <small>Summary of your App</small>
                         </h1>
-							<ol class="breadcrumb">
+							<ol id="framePath" class="breadcrumb">
 								<li>
 									<a href="#">Home</a>
 								</li>
@@ -202,32 +204,11 @@
 							</ol>
 						</div>
 					</div>
-
-					<!-- /. ROW  -->
-					<div class="row">
-						<div class="col-md-9 col-sm-12 col-xs-12">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									Bar Chart Example
-								</div>
-								<div class="panel-body">
-									<div id="morris-bar-chart"></div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-12 col-xs-12">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									Donut Chart Example
-								</div>
-								<div class="panel-body">
-									<div id="morris-donut-chart"></div>
-								</div>
-							</div>
-						</div>
-
-					</div>
-					
+				
+					<div class="container-fluid frame-wrapper" id="pcont" style="height: 88%;">
+				        <iframe style="width: 100%;height: 100%;outline: none;border: 0;" id="contentFrame" name="contentFrame" src=""></iframe>
+				
+				    </div>
 					<!-- /. ROW  -->
 
 
@@ -246,18 +227,18 @@
 		<!-- jQuery Js -->
 		<%@ include file="include/commonJs.jsp" %>
 		<!-- Metis Menu Js -->
-		<script src="js/jquery.metisMenu.js"></script>
+		<script src="${basepath}/js/jquery.metisMenu.js"></script>
 		<!-- Morris Chart Js -->
-		<script src="js/morris/raphael-2.1.0.min.js"></script>
+		<script src="${basepath}/js/morris/raphael-2.1.0.min.js"></script>
 <!--		<script src="assets/js/morris/morris.js"></script>-->
 
-		<script src="js/easypiechart.js"></script>
-		<script src="js/easypiechart-data.js"></script>
+		<script src="${basepath}/js/easypiechart.js"></script>
+		<script src="${basepath}/js/easypiechart-data.js"></script>
 
-		<script src="js/Lightweight-Chart/jquery.chart.js"></script>
+		<script src="${basepath}/js/Lightweight-Chart/jquery.chart.js"></script>
 
 		<!-- Custom Js -->
-		<script src="js/custom-scripts.js"></script>
+		<script src="${basepath}/js/custom-scripts.js"></script>
 		<script type="text/javascript">
 		$(function(){
 			(function longPolling(){
@@ -289,7 +270,28 @@
 						
 				});
 			})();
+			
 		});
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){		
+			$("a.menuAddr").click(function(){			
+				var attrMenu=$(this).attr("menuAddr");
+				$("#contentFrame").attr("src",attrMenu);
+			})
+			var headerH=$("#headerNav").height();
+			var frameH=$(window).height()-headerH+5;
+			$("#page-wrapper").css("height",frameH+"px");
+			$(window).resize(function() {
+			headerH=$("#headerNav").height();
+			frameH=$(window).height()-headerH+5;
+				$("#page-wrapper").css("height",frameH+"px");
+			});
+			/* framePath */
+			
+			$("#contentFrame").attr("src","${indexMenu.parent.menuAddr}");
+			
+		})
 	</script>
 
 	</body>
