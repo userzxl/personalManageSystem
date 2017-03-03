@@ -18,7 +18,24 @@
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-	<script type="text/javascript">
+	
+
+  </head>
+  
+  <body>
+    <nav class="frame-navbar" role="navigation">
+		<div class="container-fluid"></div>
+		<div class="navbar-header "><label class="navbar-brand color-white">所在位置:
+		<c:if test="${menuName !=null}">${menuName}</c:if>
+		</label></div>
+		<div class="clean-both"></div>
+		
+	</nav>
+	<div id="ajaxShow"></div>
+	
+  </body>
+  <%@ include file="../include/commonJs.jsp" %>
+  <script type="text/javascript">
 		$(function(){
 			(function longPolling(){
 				$.ajax({
@@ -47,19 +64,4 @@
 			})();
 		});
 	</script>
-
-  </head>
-  
-  <body>
-    <nav class="frame-navbar" role="navigation">
-		<div class="container-fluid"></div>
-		<div class="navbar-header "><label class="navbar-brand color-white">所在位置:
-		<c:if test="${menuName !=null}">${menuName}</c:if>
-		</label></div>
-		<div class="clean-both"></div>
-		
-	</nav>
-	<div id="ajaxShow"></div>
-	
-  </body>
 </html>

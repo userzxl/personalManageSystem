@@ -26,6 +26,10 @@
 
 				$("#loginBar").css("margin-top",marginTop/2+"px");
 			});
+			/* 登录超时时，如果该页面时子页面，则父页面跳转到登录页  */
+			 if(window.top!=window.self){
+  				window.top.location = "login";
+			 }
 		})
 	</script>
 	<!--
