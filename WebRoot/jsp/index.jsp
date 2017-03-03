@@ -165,17 +165,19 @@
 							<c:if test="${status.index != 0 }">
 								<c:set var="activeMenu" value=""></c:set>
 							</c:if>
-							<c:if test="${thisMenu.parent.menuChild == '1'}" >								
-								<li class="dropdown ${activeMenu}"><a class="dropdown-toggle" data-toggle="dropdown" menuNum="${thisMenu.parent.menuNum}">${thisMenu.parent.menuName}<span class="fa arrow"></span></a>
+							
+							<c:if test="${thisMenu.parent.menuChild == '1'}" >
+																
+								<li chooseThis="" class="dropdown ${activeMenu}"><a class="dropdown-toggle" data-toggle="dropdown" menuNum="${thisMenu.parent.menuNum}">${thisMenu.parent.menuName}<span class="fa arrow"></span></a>
 									<ul class="nav nav-second-level">
 										<c:forEach items="${thisMenu.children}" var="childMenu">
 										
-										<li><a  class="menuAddr" menuNum="${childMenu.menuNum}" menuAddr="<%=basePath%>${childMenu.menuAddr}">${childMenu.menuName}</a></li>
+										<li chooseThis=""><a  class="menuAddr" menuNum="${childMenu.menuNum}" menuAddr="<%=basePath%>${childMenu.menuAddr}">${childMenu.menuName}</a></li>
 										</c:forEach>
 									</ul>
 								</li>
 							</c:if>
-							<c:if test="${thisMenu.parent.menuChild != '1'}"><li class="${activeMenu}"><a class="menuAddr" menuAddr="<%=basePath%>${thisMenu.parent.menuAddr}" menuNum="${thisMenu.parent.menuNum}" >${thisMenu.parent.menuName}</a></li></c:if>  				
+							<c:if test="${thisMenu.parent.menuChild != '1'}"><li chooseThis="" class="${activeMenu}"><a class="menuAddr" menuAddr="<%=basePath%>${thisMenu.parent.menuAddr}" menuNum="${thisMenu.parent.menuNum}" >${thisMenu.parent.menuName}</a></li></c:if>  				
 						</c:forEach>
 						
 						
@@ -277,9 +279,16 @@
 		$(document).ready(function(){		
 			$("a.menuAddr").click(function(){			
 				var attrMenu=$(this).attr("menuAddr");
-				if(attrMenu == null ||attrMenu == ""|| attrMenu == "<%=basePath%>"){
+				$(".active-menu").removeClass("active-menu");
+				if(attrMenu == null ||attrMenu == ""|| attrMenu == "<%=basePath%>"){		
+					$("#main-menu").children().first().attr("class","active-menu");					
 					$("#contentFrame").attr("src","frameIndex");
-				}else{
+				}else{	
+					if($(this).parent().parent().attr("id")=="main-menu"){
+						$("li[chooseThis='true']").attr("chooseThis","false");
+					}				
+					$(this).parent().attr("chooseThis","true");
+					$("li[chooseThis='true']").addClass("active-menu");
 					$("#contentFrame").attr("src",attrMenu);
 				}
 				
@@ -295,6 +304,15 @@
 			/* framePath */
 			
 			$("#contentFrame").attr("src","${indexMenu.parent.menuAddr}");
+			$("#main-menu li").click(function(){
+				if($(this).attr("chooseThis")=="true"){
+					$(this).find("li").attr("chooseThis","false");
+				}else{
+					$(this).parent().find("li").attr("chooseThis","false");
+					$(this).attr("chooseThis","true");
+				}
+				
+			})
 			
 		})
 	</script>

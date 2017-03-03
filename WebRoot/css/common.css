@@ -15,3 +15,5 @@
 
 .clean-both{clear: both;width:100%}
 #contentFrame{background-color: #fff}
+#main-menu a{border-bottom: 1px solid rgba(107, 108, 109, 0.19);}
+.sidebar-collapse > #main-menu > li{border-bottom: 0px;}
