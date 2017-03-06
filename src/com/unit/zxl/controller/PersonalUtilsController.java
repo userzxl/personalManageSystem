@@ -20,4 +20,10 @@ public class PersonalUtilsController {
 		return mv;
 		
 	}
+	@RequestMapping("/mapUtils")
+	public ModelAndView toMapUtils(ModelAndView mv){
+		mv.setViewName("selfUtils/mapUtils");
+		return mv;
+		
+	}
 }

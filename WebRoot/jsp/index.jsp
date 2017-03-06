@@ -296,10 +296,14 @@
 			var headerH=$("#headerNav").height();
 			var frameH=$(window).height()-headerH+5;
 			$("#page-wrapper").css("height",frameH+"px");
+			var pcontH=$("#page-inner").height()-$("#page-inner .row:first").height()-$("footer:first").height();
+			$("#pcont").css("height",pcontH+"px");
 			$(window).resize(function() {
 				headerH=$("#headerNav").height();
 				frameH=$(window).height()-headerH+5;
-					$("#page-wrapper").css("height",frameH+"px");
+				$("#page-wrapper").css("height",frameH+"px");
+				pcontH=$("#page-inner").height()-$("#page-inner .row:first").height()-$("footer:first").height();
+				$("#pcont").css("height",pcontH+"px");
 			});
 			/* framePath */
 			

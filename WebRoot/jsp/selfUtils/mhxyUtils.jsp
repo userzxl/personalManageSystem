@@ -1,7 +1,6 @@
 <%@ page language="java" import="java.util.*" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../include/include.jsp" %>
 <!DOCTYPE html>
-<!-- saved from url=(0045)http://127.0.0.1:8020/ManageSystem/index.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		
 		<meta name="viewport" content="width=device-width,initial-scale=1">
