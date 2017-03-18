@@ -195,15 +195,10 @@
 							<h1 class="page-header">
                              <small>Summary of your App</small>
                         </h1>
-							<ol id="framePath" class="breadcrumb">
-								<li>
-									<a href="#">Home</a>
-								</li>
-								<li>
-									<a href="#">Library</a>
-								</li>
-								<li class="active">Data</li>
-							</ol>
+							<ul id="framePath" class="nav nav-pills nav-psm">
+								<li class="active"><a href="selfUtils/mapUtils/getTrack">Track</a></li>
+								<li ><a>hehe</a></li>
+							</ul>
 						</div>
 					</div>
 				
@@ -241,7 +236,8 @@
 
 		<!-- Custom Js -->
 		<script src="${basepath}/js/custom-scripts.js"></script>
-		<script type="text/javascript">
+		<!-- 实时通信  -->
+		<!-- <script type="text/javascript">
 		$(function(){
 			(function longPolling(){
 				$.ajax({
@@ -274,7 +270,7 @@
 			})();
 			
 		});
-	</script>
+	</script> -->
 	<script type="text/javascript">
 		$(document).ready(function(){		
 			$("a.menuAddr").click(function(){			
@@ -309,9 +305,14 @@
 			
 			$("#contentFrame").attr("src","${indexMenu.parent.menuAddr}");
 			$("#main-menu li").click(function(){
+				if(!$(this).hasClass("dropdown")){ 
+					$(this).parent().find("li").removeClass("active");
+					$(this).parent().find("ul").removeClass("in");
+				}
 				if($(this).attr("chooseThis")=="true"){
 					$(this).find("li").attr("chooseThis","false");
 				}else{
+					
 					$(this).parent().find("li").attr("chooseThis","false");
 					$(this).attr("chooseThis","true");
 				}

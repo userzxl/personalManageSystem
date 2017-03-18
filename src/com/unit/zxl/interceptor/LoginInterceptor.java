@@ -1,5 +1,8 @@
 package com.unit.zxl.interceptor;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -33,14 +36,13 @@ public class LoginInterceptor implements HandlerInterceptor {
 	 */
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
-			Object arg2) throws Exception {
+			Object arg2) throws Exception {		 
 		if(request.getSession().getAttribute("userName")!=null){
 			return true;
 		} else if(request.getServletPath()=="/login"){
 			System.out.println(request.getServletPath());
 			return true;
-		}
-		else{
+		}else{
 			response.sendRedirect(request.getContextPath() +"/login");
             return false;
 		}
