@@ -17,4 +17,6 @@ public interface TrackMapper {
 
     int updateByPrimaryKey(Track record);
     List<Track> getTrackList();
+    List<Track> getTransTrackList();
+    void updatePoints(List<Track> list);
 }

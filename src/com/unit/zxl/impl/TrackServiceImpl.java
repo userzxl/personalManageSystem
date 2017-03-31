@@ -42,4 +42,22 @@ public class TrackServiceImpl implements ITrackService {
 		return trackMapper.getTrackList();
 	}
 
+	/* (non-Javadoc)
+	 * @see com.unit.zxl.service.ITrackService#transTracks()
+	 */
+	@Override
+	public List<Track> getTransTrackList() {
+		// TODO Auto-generated method stub
+		return trackMapper.getTransTrackList();
+	}
+
+	/* (non-Javadoc)
+	 * @see com.unit.zxl.service.ITrackService#updatePoins()
+	 */
+	@Override
+	public void updatePoints(List<Track> list) {
+		// TODO Auto-generated method stub
+		trackMapper.updatePoints(list);
+	}
+
 }

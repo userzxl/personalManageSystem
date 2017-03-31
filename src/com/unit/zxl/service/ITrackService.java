@@ -9,4 +9,8 @@ public interface ITrackService {
 	public Track getTrack();
 
 	public List<Track> getTrackList();
+	
+	public List<Track> getTransTrackList();
+	
+	public void updatePoints(List<Track> list);
 }

@@ -33,10 +33,8 @@ public class PersonalUtilsController {
 	@RequestMapping("/mapUtils")
 	public ModelAndView toMapUtils(ModelAndView mv){
 		mv.setViewName("selfUtils/mapUtils");
-		List<Track> trackList = iTrackService.getTrackList();
-		String array = JSONArray.toJSONString(trackList);
-		mv.addObject("track",array);
 		return mv;
 		
 	}
+	
 }

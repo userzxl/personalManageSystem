@@ -22,6 +22,18 @@
     from track
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="getTransTrackList" resultMap="BaseResultMap" parameterType="com.unit.zxl.entity.Track" >
+    select 
+    <include refid="Base_Column_List" />
+    from track
+    where word4 = 0
+  </select>
+  <update id="updatePoints"  parameterType="java.util.List" >
+  		<foreach collection="list" item="item" index="index" separator=";">
+        update track set latitude = #{item.latitude,jdbcType=DOUBLE},longitude = #{item.longitude,jdbcType=DOUBLE},word4 = #{item.word4,jdbcType=DOUBLE} where id = #{item.id,jdbcType=INTEGER}
+		 </foreach>
+		
+  </update>
   <select id="getTrackList" resultMap="BaseResultMap" parameterType="com.unit.zxl.entity.Track" >
     select 
     <include refid="Base_Column_List" />

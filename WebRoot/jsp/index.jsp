@@ -196,7 +196,7 @@
                              <small>Summary of your App</small>
                         </h1>
 							<ul id="framePath" class="nav nav-pills nav-psm">
-								<li class="active"><a href="selfUtils/mapUtils/getTrack">Track</a></li>
+								<li class="active"><a target="contentFrame" href="selfUtils/mapUtils/getTrack">Track</a></li>
 								<li ><a>hehe</a></li>
 							</ul>
 						</div>
