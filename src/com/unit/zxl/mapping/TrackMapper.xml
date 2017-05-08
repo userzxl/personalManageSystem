@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unit.zxl.dao.TrackMapper" >
+  <resultMap id="BaseResultMap" type="com.unit.zxl.entity.Track" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="num" property="num" jdbcType="INTEGER" />
+    <result column="latitude" property="latitude" jdbcType="DOUBLE" />
+    <result column="longitude" property="longitude" jdbcType="DOUBLE" />
+    <result column="direct" property="direct" jdbcType="DOUBLE" />
+    <result column="speed" property="speed" jdbcType="DOUBLE" />
+    <result column="word1" property="word1" jdbcType="DOUBLE" />
+    <result column="word2" property="word2" jdbcType="DOUBLE" />
+    <result column="word3" property="word3" jdbcType="DOUBLE" />
+    <result column="word4" property="word4" jdbcType="DOUBLE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, num, latitude, longitude, direct, speed, word1, word2, word3, word4
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from track
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="getTransTrackList" resultMap="BaseResultMap" parameterType="com.unit.zxl.entity.Track" >
+    select 
+    <include refid="Base_Column_List" />
+    from track
+    where word4 = 0
+  </select>
+  <update id="updatePoints"  parameterType="java.util.List" >
+  		<foreach collection="list" item="item" index="index" separator=";">
+        update track set latitude = #{item.latitude,jdbcType=DOUBLE},longitude = #{item.longitude,jdbcType=DOUBLE},word4 = #{item.word4,jdbcType=DOUBLE} where id = #{item.id,jdbcType=INTEGER}
+		 </foreach>
+		
+  </update>
+  <select id="getTrackList" resultMap="BaseResultMap" parameterType="com.unit.zxl.entity.Track" >
+    select 
+    <include refid="Base_Column_List" />
+    from track
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from track
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.unit.zxl.entity.Track" >
+    insert into track (id, num, latitude, 
+      longitude, direct, speed, 
+      word1, word2, word3, word4
+      )
+    values (#{id,jdbcType=INTEGER}, #{num,jdbcType=INTEGER}, #{latitude,jdbcType=DOUBLE}, 
+      #{longitude,jdbcType=DOUBLE}, #{direct,jdbcType=DOUBLE}, #{speed,jdbcType=DOUBLE}, 
+      #{word1,jdbcType=DOUBLE}, #{word2,jdbcType=DOUBLE}, #{word3,jdbcType=DOUBLE}, #{word4,jdbcType=DOUBLE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.unit.zxl.entity.Track" >
+    insert into track
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="num != null" >
+        num,
+      </if>
+      <if test="latitude != null" >
+        latitude,
+      </if>
+      <if test="longitude != null" >
+        longitude,
+      </if>
+      <if test="direct != null" >
+        direct,
+      </if>
+      <if test="speed != null" >
+        speed,
+      </if>
+      <if test="word1 != null" >
+        word1,
+      </if>
+      <if test="word2 != null" >
+        word2,
+      </if>
+      <if test="word3 != null" >
+        word3,
+      </if>
+      <if test="word4 != null" >
+        word4,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="num != null" >
+        #{num,jdbcType=INTEGER},
+      </if>
+      <if test="latitude != null" >
+        #{latitude,jdbcType=DOUBLE},
+      </if>
+      <if test="longitude != null" >
+        #{longitude,jdbcType=DOUBLE},
+      </if>
+      <if test="direct != null" >
+        #{direct,jdbcType=DOUBLE},
+      </if>
+      <if test="speed != null" >
+        #{speed,jdbcType=DOUBLE},
+      </if>
+      <if test="word1 != null" >
+        #{word1,jdbcType=DOUBLE},
+      </if>
+      <if test="word2 != null" >
+        #{word2,jdbcType=DOUBLE},
+      </if>
+      <if test="word3 != null" >
+        #{word3,jdbcType=DOUBLE},
+      </if>
+      <if test="word4 != null" >
+        #{word4,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.unit.zxl.entity.Track" >
+    update track
+    <set >
+      <if test="num != null" >
+        num = #{num,jdbcType=INTEGER},
+      </if>
+      <if test="latitude != null" >
+        latitude = #{latitude,jdbcType=DOUBLE},
+      </if>
+      <if test="longitude != null" >
+        longitude = #{longitude,jdbcType=DOUBLE},
+      </if>
+      <if test="direct != null" >
+        direct = #{direct,jdbcType=DOUBLE},
+      </if>
+      <if test="speed != null" >
+        speed = #{speed,jdbcType=DOUBLE},
+      </if>
+      <if test="word1 != null" >
+        word1 = #{word1,jdbcType=DOUBLE},
+      </if>
+      <if test="word2 != null" >
+        word2 = #{word2,jdbcType=DOUBLE},
+      </if>
+      <if test="word3 != null" >
+        word3 = #{word3,jdbcType=DOUBLE},
+      </if>
+      <if test="word4 != null" >
+        word4 = #{word4,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.unit.zxl.entity.Track" >
+    update track
+    set num = #{num,jdbcType=INTEGER},
+      latitude = #{latitude,jdbcType=DOUBLE},
+      longitude = #{longitude,jdbcType=DOUBLE},
+      direct = #{direct,jdbcType=DOUBLE},
+      speed = #{speed,jdbcType=DOUBLE},
+      word1 = #{word1,jdbcType=DOUBLE},
+      word2 = #{word2,jdbcType=DOUBLE},
+      word3 = #{word3,jdbcType=DOUBLE},
+      word4 = #{word4,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -29,7 +29,6 @@ public class LongPollingController {
 		Date nowDate = new Date();
 		DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String dateString = format.format(nowDate);
-		System.out.println(dateString);
 		response.setContentType("text/json;charset=utf-8");
 		try {
 			Thread.sleep(10000);
